@@ -1,0 +1,9 @@
+{
+  "id" : "8988209d-2de8-4b6d-8478-1140d19d4922",
+  "targets" : [
+    {
+      "id" : "d00dc5ed-090c-4d4e-a34b-e5d2e6200cb3",
+      "name" : "SandBoxApp"
+    }
+  ]
+}
