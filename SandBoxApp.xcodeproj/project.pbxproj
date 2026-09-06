@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E5C4C33A29E7009107EDCE5 /* SandBoxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0DB2F7AC01C37EF50EA39 /* SandBoxAppApp.swift */; };
+		8696AD9FE8E0C4487B41E88B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3204E2D28DD149AE74CEE6C /* RootView.swift */; };
 		9E577B2756AF7DF32B57BCC5 /* LauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8E69D435196B7B42F7523 /* LauncherView.swift */; };
 		AFD7E1AF0F639C65709FACF3 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = C27E428AD2BAA3672A2D133B /* Core */; };
 		B3278B4057F8E9E13D71206E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634DE9D6A618D922CF4A32A7 /* Assets.xcassets */; };
@@ -22,7 +23,8 @@
 		91655ACF1669D45E6BE7C03A /* Core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Core; path = Packages/Core; sourceTree = SOURCE_ROOT; };
 		A8A0DB2F7AC01C37EF50EA39 /* SandBoxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxAppApp.swift; sourceTree = "<group>"; };
 		BD9E6B1DCE37BAA3A2193F2C /* HelloIdea */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HelloIdea; path = Packages/Ideas/HelloIdea; sourceTree = SOURCE_ROOT; };
-		FF4F9A3F134D5012D86D5AA6 /* SandBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SandBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3204E2D28DD149AE74CEE6C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FF4F9A3F134D5012D86D5AA6 /* SandBoxApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SandBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			children = (
 				634DE9D6A618D922CF4A32A7 /* Assets.xcassets */,
 				08C8E69D435196B7B42F7523 /* LauncherView.swift */,
+				D3204E2D28DD149AE74CEE6C /* RootView.swift */,
 				A8A0DB2F7AC01C37EF50EA39 /* SandBoxAppApp.swift */,
 			);
 			path = SandBoxApp;
@@ -108,9 +111,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2700;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					BC2B24C6C34E4462EEE0BDEA = {
+						DevelopmentTeam = T8T5899N75;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -156,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E577B2756AF7DF32B57BCC5 /* LauncherView.swift in Sources */,
+				8696AD9FE8E0C4487B41E88B /* RootView.swift in Sources */,
 				4E5C4C33A29E7009107EDCE5 /* SandBoxAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +175,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T8T5899N75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -221,10 +227,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = J9ALTX5GVP;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -238,7 +242,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -280,10 +283,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = J9ALTX5GVP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -304,7 +305,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -318,6 +318,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T8T5899N75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

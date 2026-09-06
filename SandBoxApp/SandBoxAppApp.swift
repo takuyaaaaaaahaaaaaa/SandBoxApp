@@ -4,7 +4,7 @@ import SwiftUI
 struct SandBoxAppApp: App {
     var body: some Scene {
         WindowGroup {
-            LauncherView()
+            RootView()
         }
     }
 }

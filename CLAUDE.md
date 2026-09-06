@@ -7,7 +7,7 @@
 ```
 SandBoxApp/
 ├── project.yml            ← XcodeGenの定義ファイル。編集後は `xcodegen generate`
-├── SandBoxApp/             ← App Target本体(ランチャー画面のみ)
+├── SandBoxApp/             ← App Target本体(RootView/LauncherView)
 ├── Packages/
 │   ├── Core/               ← 共通基盤(今は空)
 │   ├── IdeaKit/            ← IdeaApp プロトコルのみ
@@ -22,6 +22,11 @@ SandBoxApp/
 - MV パターン(`@Observable` な Model + SwiftUI View)のみ。ViewModel/Reducer/TCAは使わない
 - 各 `Ideas/*` パッケージは他の `Ideas/*` に依存しない。依存してよいのは `IdeaKit` と `Core` のみ
 - `IdeaKit.IdeaApp` プロトコルに準拠すればランチャーに追加できる
+- `RootView` が選択状態に応じて `LauncherView` か 選択中Ideaの `makeRootView()` を
+  画面全体のルートとして丸ごと差し替える(モーダルでかぶせるのではない)。そのため
+  Idea側は `TabView`・`NavigationStack` など好きな構造を自由に組んでよい
+- ランチャーへ戻る導線は `@Environment(\.returnToLauncher)`(IdeaKitが提供)を呼ぶ。
+  Idea側の好きな場所(設定タブなど)にボタンを置く(HelloIdeaの`HelloIdeaAboutView`を参照)
 
 ## 新しいIdeaの追加方法
 

@@ -6,7 +6,30 @@ public enum HelloIdeaApp: IdeaApp {
     public static let name = "Hello Idea"
 
     public static func makeRootView() -> AnyView {
-        AnyView(HelloIdeaView())
+        AnyView(HelloIdeaRootView())
+    }
+}
+
+/// このIdeaが選択されたときに画面全体のルートになるView。
+/// TabViewを丸ごとルートにできる例として、Counter/Aboutの2タブを持たせている。
+/// Aboutタブにランチャーへ戻るボタンを置いている。
+struct HelloIdeaRootView: View {
+    var body: some View {
+        TabView {
+            NavigationStack {
+                HelloIdeaCounterView()
+            }
+            .tabItem {
+                Label("Counter", systemImage: "hand.tap")
+            }
+
+            NavigationStack {
+                HelloIdeaAboutView()
+            }
+            .tabItem {
+                Label("About", systemImage: "info.circle")
+            }
+        }
     }
 }
 
@@ -19,7 +42,7 @@ final class HelloIdeaModel {
     }
 }
 
-struct HelloIdeaView: View {
+struct HelloIdeaCounterView: View {
     @State private var model = HelloIdeaModel()
 
     var body: some View {
@@ -40,6 +63,24 @@ struct HelloIdeaView: View {
     }
 }
 
+struct HelloIdeaAboutView: View {
+    @Environment(\.returnToLauncher) private var returnToLauncher
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("HelloIdeaはIdeaKitを使ったサンプルです。")
+                .multilineTextAlignment(.center)
+
+            Button("Sandboxに戻る") {
+                returnToLauncher()
+            }
+            .buttonStyle(.bordered)
+        }
+        .padding()
+        .navigationTitle("About")
+    }
+}
+
 #Preview {
-    HelloIdeaView()
+    HelloIdeaRootView()
 }
